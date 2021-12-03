@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import "./mixins";
+@import "./variables";
+
+
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+html, body{
+    height: 100%;
+    margin:0;
+    padding:0;
+    position: relative;
+    
+}
+
+// Styles for index page
+.base{
+    display: flex;
+    padding: 5rem 2rem;
+    &__left{
+        @include area;
+        &__box{
+            @include border(#C4C4C4);
+            border-radius: 15px !important;
+            padding: 2rem;
+            @include flex-center-y;
+            max-width: 100%;
+            &__img{
+                margin-bottom: 1rem;
+            }
+
+            &__text{
+                @include text(24px,#898583);
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            &__moods{
+                @include flex-center-x;
+                &__each{
+                    @include btn-rounded;
+                    // variations
+                    &--sad{
+                        @include btn-rounded-sad;
+                    }
+                    &--indiff{
+                        @include btn-rounded-indiff;
+                    }
+                    &--excited{
+                        @include btn-rounded-excited;
+                    }
+
+                    // hover states
+                    &__sad{
+                        &:hover{
+                            @include btn-rounded-sad;
+                        }
+                    }
+                    &__indiff{
+                        &:hover{
+                            @include btn-rounded-indiff;
+                        }
+                    }
+                    &__excited{
+                        &:hover{
+                            @include btn-rounded-excited;
+                        }
+                    }
+                }
+                margin-bottom: 2rem;
+            }
+
+            &__cta{
+                margin-bottom: 4rem;
+                &__save{
+                    @include btn;
+                    &--disabled{
+                        @include btn-disabled;
+                    }
+                }
+            }
+        }
+    }
+    &__right{
+        @include area;
+        &__header{
+            @include flex-center-y;
+            &__box{
+                @include flex-items-center;
+                &__img{
+                }
+                &__text{
+                    margin-left: 10px;
+                    @include text(24px,#35100C);
+                }
+                
+            }
+            &__subtext{
+                @include text(16px,rgba(53, 16, 12, 0.5));
+                margin-bottom: 3rem;
+            }
+        }
+
+        &__states{
+            padding: 0 20%;
+            &__empty{
+                @include border(black);
+                padding: 2rem;
+                @include flex-center-y;
+                opacity: 0.2;
+                
+            }
+        }
+    }
+}
+
+
+
+// Media queries
+// MQ for extra large screens responsive display
+@media only screen and (min-width: 1536px) {
+    
+}
+
+// MQ for large screens responsive display
+@media only screen and (min-width: 1024px) {
+    
+}
+
+// MQ for medium screens responsive display
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    
+}
+
+// MQ for small screens responsive display
+@media only screen and (max-width: 768px) {
+    .base{
+        flex-direction: column;
+        &__left, &__right{
+            width: 100% !important;
+        }
+
+        &__left{
+            margin-bottom: 2rem;
+        }
+    }
+}
+

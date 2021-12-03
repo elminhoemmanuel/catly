@@ -1,0 +1,108 @@
+@import "./variables";
+
+@mixin area() {
+    width: 50%;
+}
+
+%btn{
+    border: none;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 20px;
+}
+
+@mixin btn() {
+    @extend %btn;
+    background: #120C35;
+}
+
+@mixin btn-disabled() {
+    @extend %btn;
+    background: #120C35;
+    opacity: 0.2;
+}
+
+
+@mixin text($size,$color) {
+    font-size:$size;
+    color: $color;
+}
+
+@mixin border($color) {
+    border: 1px solid ;
+    border-radius: 5px;
+}
+
+@mixin placeholder($value) {
+    &::placeholder{
+        color: $value;
+    }
+    &::-moz-placeholder{
+        color: $value;
+    }
+    &::-webkit-input-placeholder{
+        color: $value;
+    }
+}
+
+@mixin flex-center-x {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-items-center {
+    display:flex;
+    align-items: center;
+}
+
+@mixin flex-center-y {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center-abs {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin hidden {
+    display: none;
+}
+
+%btn-rounded{
+    border: none;
+    width: 4rem;
+    height: 4rem;
+    @include flex-center-abs;
+    margin-right: 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+@mixin btn-rounded(){
+    @extend %btn-rounded;
+    background: rgba(175, 170, 168, 0.2);
+    border: px solid rgba(175, 170, 168, 0.2);
+}
+@mixin btn-rounded-sad(){
+    @extend %btn-rounded;
+    background: $sadbg;
+    border: 2px solid $sad;
+}
+@mixin btn-rounded-indiff(){
+    @extend %btn-rounded;
+    background: $indiffbg;
+    border: 2px solid $indiff;
+}
+@mixin btn-rounded-excited(){
+    @extend %btn-rounded;
+    background: $excitedbg;
+    border: 2px solid $excited;
+}
