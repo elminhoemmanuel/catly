@@ -2,7 +2,7 @@
 
 <h1 align="center">Catly</h1>
 
-<p align="center">[catly](https://catly.vercel.app/)</p>
+<p align="center"><a href="https://catly.vercel.app/">catly</a></p>
 
 <div align="center">
    A simple React app to track your cat's emotions.
