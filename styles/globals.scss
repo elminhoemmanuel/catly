@@ -18,7 +18,9 @@ html, body{
 // Styles for index page
 .base{
     display: flex;
-    padding: 5rem 2rem;
+    padding: 0rem 2rem;
+    align-items: center;
+    height: 100vh;
     &__left{
         @include area;
         &__box{
@@ -105,12 +107,72 @@ html, body{
 
         &__states{
             padding: 0 20%;
+            height: 60vh;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                width: 0.5rem;
+            }
+               
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            }
+               
+            &::-webkit-scrollbar-thumb {
+                background-color: darkgrey;
+                outline: 1px solid slategrey;
+                border-radius: 3px;
+            }
             &__empty{
                 @include border(black);
                 padding: 2rem;
                 @include flex-center-y;
                 opacity: 0.2;
                 
+            }
+
+            &__stateful{
+                &__each{
+                    @include mood;
+                    @include flex-items-center;
+                    &--sad{
+                        @include mood-sad;
+                    }
+                    &--indiff{
+                        @include mood-indiff;
+                    }
+                    &--excited{
+                        @include mood-excited;
+                    }
+
+                    &__emoji{
+                        @include btn-rounded;
+                        margin-right: 5px;
+                        // variations
+                        &--sad{
+                            @include btn-rounded-sad;
+                        }
+                        &--indiff{
+                            @include btn-rounded-indiff;
+                        }
+                        &--excited{
+                            @include btn-rounded-excited;
+                        }
+                    }
+
+                    &__maintext{
+                        margin: 0;
+                        padding: 0;
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+                    &__subtext{
+                        margin: 0;
+                        padding: 0;
+                        color: #C4C4C4;
+                        font-size: 12px;
+                    }
+                    
+                }
             }
         }
     }
@@ -138,12 +200,18 @@ html, body{
 @media only screen and (max-width: 768px) {
     .base{
         flex-direction: column;
+        padding: 2rem 2rem;
         &__left, &__right{
             width: 100% !important;
         }
 
         &__left{
             margin-bottom: 2rem;
+        }
+        &__right{
+            &__states{
+                padding: 0 10%;
+            }
         }
     }
 }

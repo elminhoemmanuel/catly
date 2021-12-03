@@ -13,6 +13,14 @@ export default function Home() {
         setMood(value);
     }
 
+    const saveMood = (value) =>{
+        setMoodsArr([
+            value,
+            ...moodsArr
+        ])
+        setMood("");
+    }
+
   return (
     <>
       <Head>
@@ -21,7 +29,7 @@ export default function Home() {
       </Head>
 
       <section className='base'>
-        <Left mood={mood} handleMood={handleMood} />
+        <Left mood={mood} handleMood={handleMood} saveMood={saveMood} />
         <Right moods={moodsArr} />
       </section>
     </>
