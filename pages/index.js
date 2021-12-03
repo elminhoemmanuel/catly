@@ -20,10 +20,10 @@ export default function Home() {
         <meta name="keywords" content="Catly | Homepage" />
       </Head>
 
-      <div className='base'>
+      <section className='base'>
         <Left mood={mood} handleMood={handleMood} />
         <Right moods={moodsArr} />
-      </div>
+      </section>
     </>
   )
 }
