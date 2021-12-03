@@ -7,7 +7,7 @@ import Right from '../components/layout/Right'
 export default function Home() {
 
     const [moodsArr, setMoodsArr] = useState([]);
-    const [mood, setMood] = useState("");
+    const [mood, setMood] = useState({name:""});
 
     const handleMood = (value) =>{
         setMood(value);
@@ -18,7 +18,7 @@ export default function Home() {
             value,
             ...moodsArr
         ])
-        setMood("");
+        setMood({name:""});
     }
 
   return (

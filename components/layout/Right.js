@@ -34,22 +34,18 @@ const Right = ({ moods }) => {
                         <div className="base__right__states__stateful">
                             {
                                 moods.map(item => (
-                                    <div key={moods.indexOf(item)}
-                                        className={`base__right__states__stateful__each base__right__states__stateful__each--${item}`}
+                                    <div key={item.id}
+                                        className={`base__right__states__stateful__each base__right__states__stateful__each--${item.name}`}
                                     >
-                                        <div className={`base__right__states__stateful__each__emoji--${item}`}>
+                                        <div className={`base__right__states__stateful__each__emoji--${item.name}`}>
                                             <span >
-                                                {item === "sad" && '😖'}
-                                                {item === "indiff" && '😐'}
-                                                {item === "excited" && '😃'}
+                                                {item.emoji}
                                             </span>
                                         </div>
 
                                         <div>
                                             <p className="base__right__states__stateful__each__maintext">
-                                                {item === "sad" && 'Cat wasn’t having it'}
-                                                {item === "indiff" && 'Cat was indifferent'}
-                                                {item === "excited" && 'Cat was super excited!'}
+                                                {item.message}
                                             </p>
                                             <p className="base__right__states__stateful__each__subtext">
                                                 {moment(new Date()).format("DD-MM-YYYY")}/{moment(new Date()).format("hh")}:{moment(new Date()).format("mm")}
