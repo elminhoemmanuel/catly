@@ -1,8 +1,6 @@
 import React from 'react'
 
-const Left = ({ mood, handleMood }) => {
-
-
+const Left = ({ mood, handleMood, saveMood }) => {
 
     return (
         <div className="base__left">
@@ -29,7 +27,8 @@ const Left = ({ mood, handleMood }) => {
                 </div>
 
                 <div className="base__left__box__cta">
-                    <button className={`base__left__box__cta__save${mood===""?`--disabled`:``}`}>
+                    <button onClick={()=>{saveMood(mood)}}
+                    className={`base__left__box__cta__save${mood===""?`--disabled`:``}`}>
                         Save mood
                     </button>
                 </div>

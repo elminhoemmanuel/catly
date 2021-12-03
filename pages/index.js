@@ -13,6 +13,14 @@ export default function Home() {
         setMood(value);
     }
 
+    const saveMood = (value) =>{
+        setMoodsArr([
+            value,
+            ...moodsArr
+        ])
+        setMood("");
+    }
+
   return (
     <>
       <Head>
@@ -20,10 +28,10 @@ export default function Home() {
         <meta name="keywords" content="Catly | Homepage" />
       </Head>
 
-      <div className='base'>
-        <Left mood={mood} handleMood={handleMood} />
+      <section className='base'>
+        <Left mood={mood} handleMood={handleMood} saveMood={saveMood} />
         <Right moods={moodsArr} />
-      </div>
+      </section>
     </>
   )
 }

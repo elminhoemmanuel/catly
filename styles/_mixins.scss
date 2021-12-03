@@ -106,3 +106,32 @@
     background: $excitedbg;
     border: 2px solid $excited;
 }
+
+%mood{
+    padding: 10px;
+    background-image: linear-gradient(rgba(243, 244, 246, 0.7), rgba(243, 244, 246, 0.7)),url("/images/cat-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+@mixin mood(){
+    @extend %mood;
+    border: 2px solid rgba(175, 170, 168, 0.2);
+}
+@mixin mood-sad(){
+    @extend %mood;
+    border: 2px solid $sad;
+    color: $sad;
+}
+@mixin mood-indiff(){
+    @extend %mood;
+    border: 2px solid $indiff;
+    color: $indiff;
+}
+@mixin mood-excited(){
+    @extend %mood;
+    border: 2px solid $excited;
+    color: $excited;
+}

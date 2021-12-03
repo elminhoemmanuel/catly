@@ -1,6 +1,10 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import moment from "moment"
 
 const Right = ({ moods }) => {
+
+    
+
     return (
         <div className="base__right">
             <div className="base__right__header">
@@ -28,7 +32,32 @@ const Right = ({ moods }) => {
                         </div>
                         :
                         <div className="base__right__states__stateful">
+                            {
+                                moods.map(item => (
+                                    <div key={moods.indexOf(item)}
+                                        className={`base__right__states__stateful__each base__right__states__stateful__each--${item}`}
+                                    >
+                                        <div className={`base__right__states__stateful__each__emoji--${item}`}>
+                                            <span >
+                                                {item === "sad" && '😖'}
+                                                {item === "indiff" && '😐'}
+                                                {item === "excited" && '😃'}
+                                            </span>
+                                        </div>
 
+                                        <div>
+                                            <p className="base__right__states__stateful__each__maintext">
+                                                {item === "sad" && 'Cat wasn’t having it'}
+                                                {item === "indiff" && 'Cat was indifferent'}
+                                                {item === "excited" && 'Cat was super excited!'}
+                                            </p>
+                                            <p className="base__right__states__stateful__each__subtext">
+                                                {moment(new Date()).format("DD-MM-YYYY")}/{moment(new Date()).format("hh")}:{moment(new Date()).format("mm")}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))
+                            }
                         </div>
                 }
             </div>

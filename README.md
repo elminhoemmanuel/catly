@@ -1,22 +1,11 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Onboardly</h1>
+<h1 align="center">Catly</h1>
+
+<p align="center"><a href="https://catly.vercel.app/">catly</a></p>
 
 <div align="center">
-   Solution for a challenge from  <a href="https://docs.google.com/document/d/1H10GI9VL3eQ9ADgQWnZy8tglnTnzsypFCaKjDS-LleM/edit" target="_blank">daba front end intermediate coding exercise</a>.
-</div>
-
-<div align="center">
-  <h3>
-    <span> | </span>
-    <a href="https://onboardly.vercel.app/">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://docs.google.com/document/d/1H10GI9VL3eQ9ADgQWnZy8tglnTnzsypFCaKjDS-LleM/edit">
-      Exercise
-    </a>
-  </h3>
+   A simple React app to track your cat's emotions.
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -36,10 +25,10 @@
 
  
 
-- The live demo of this project can be found deployed live on vercel [here](https://onboardly.vercel.app/) .  
+- The live demo of this project can be found deployed live on vercel [here](https://catly.vercel.app/) .  
 
 
-- My experience building this web application was enlightening. It afforded me the opportunity to flex my muscles with some technologies I use frequently such as SCSS.
+- My experience building this web application was enlightening. It afforded me the opportunity to flex my muscles with some technologies I use frequently by using SCSS with the BEM approach.
 
 ### Built With
 
@@ -47,7 +36,6 @@
 
 - [React](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
-- [Redux](https://redux.js.org/)
 - [SASS/SCSS](https://sass-lang.com/)
 - [Vercel](https://vercel.com/) for deployment
 
@@ -60,7 +48,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/elminhoemmanuel/onboardly.git
+$ git clone https://github.com/elminhoemmanuel/catly.git
 
 # Install dependencies
 $ npm install
