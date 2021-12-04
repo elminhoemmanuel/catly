@@ -89,7 +89,6 @@
 @mixin btn-rounded(){
     @extend %btn-rounded;
     background: rgba(175, 170, 168, 0.2);
-    border: px solid rgba(175, 170, 168, 0.2);
 }
 @mixin btn-rounded-sad(){
     @extend %btn-rounded;
