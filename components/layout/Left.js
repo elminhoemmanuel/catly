@@ -1,4 +1,5 @@
 import React from 'react'
+import { moodTypes } from '../../constants/moods'
 
 const Left = ({ mood, handleMood, saveMood }) => {
 
@@ -12,23 +13,22 @@ const Left = ({ mood, handleMood, saveMood }) => {
                 <h2 className="base__left__box__text">What is your cat’s current mood?</h2>
 
                 <div className="base__left__box__moods">
-                    <button onClick={()=>handleMood("sad")}
-                    className={`base__left__box__moods__each${mood==="sad"?`--sad`:``} base__left__box__moods__each__sad`} >
-                        <span>😖</span>
-                    </button>
-                    <button onClick={()=>handleMood("indiff")}
-                    className={`base__left__box__moods__each${mood==="indiff"?`--indiff`:``} base__left__box__moods__each__indiff`}>
-                        <span>😐</span>
-                    </button>
-                    <button onClick={()=>handleMood("excited")}
-                    className={`base__left__box__moods__each${mood==="excited"?`--excited`:``} base__left__box__moods__each__excited`}>
-                        <span>😃</span>
-                    </button>
+                    
+                    {/* refactored mood types to be scalable , more moods can be added by adding them to the moodTypes object */}
+                    {
+                        moodTypes.map(item => (
+                            <button key={item.id} onClick={() => handleMood(item)}
+                                className={`base__left__box__moods__each${mood.name === item.name ? `--${item.name}` : ``} base__left__box__moods__each__${item.name}`} >
+                                <span>{item.emoji}</span>
+                            </button>
+                        ))
+                    }
+
                 </div>
 
                 <div className="base__left__box__cta">
-                    <button onClick={()=>{saveMood(mood)}}
-                    className={`base__left__box__cta__save${mood===""?`--disabled`:``}`}>
+                    <button onClick={() => { saveMood(mood) }}
+                        className={`base__left__box__cta__save${mood.name === "" ? `--disabled` : ``}`}>
                         Save mood
                     </button>
                 </div>
